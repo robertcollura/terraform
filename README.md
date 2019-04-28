@@ -1,1 +1,1 @@
-# terraform
+# Terraform Training Exercises
