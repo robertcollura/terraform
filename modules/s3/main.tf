@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "tf-child-module-bucket" {
-  bucket = "tf-child-module-bucket-rc"
+  bucket = "${var.bucket_name}"
   acl = "private"
   
   versioning {
@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "tf-child-module-bucket" {
   }
   
   tags = {
-    Name        = "RC's Bucket"
-    Environment = "Training"
+    Name        = "${var.tag_name}"
+    Environment = "${var.env_name}"
   }
 }
