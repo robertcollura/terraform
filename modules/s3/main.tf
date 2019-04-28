@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "tf-child-module-bucket" {
   }
   
   tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
+    Name        = "RC's Bucket"
+    Environment = "Training"
   }
 }
