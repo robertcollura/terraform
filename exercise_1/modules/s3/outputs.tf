@@ -1,5 +1,5 @@
 output "s3_bucket" {
-    value = "${var.s3)_bucket_name}"
+    value = "${var.s3_bucket_name}"
 }
 
 output "env_tag" {
