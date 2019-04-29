@@ -1,5 +1,5 @@
 provider "aws" {
-  region     = "${var.region}"
+  region = "${var.region}"
 }
 
 terraform {
@@ -10,7 +10,7 @@ terraform {
   }
 }
 
-# References main.tf config in S3 module
+# References main.tf configuration in S3 child module
 module "s3_module_same_repo" {
   source = "./modules/s3"
 }
