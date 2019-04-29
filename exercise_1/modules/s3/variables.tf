@@ -13,7 +13,7 @@ variable "s3_bucket_region" {
 variable "s3_bucket_name" {
   type        = "string"
   description = "Name of the S3 bucket to be created"
-  default     = "rc-tf-bucket-training-exervice-1
+  default     = "rc-tf-bucket-training-exervice-1"
   }
 
 variable "tag_env" {
