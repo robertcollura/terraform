@@ -2,13 +2,13 @@ provider "aws" {
   region = "${var.region}"
 }
 
-# terraform {
-#  backend "s3" {
-#  bucket = "rc-tf-remote-state-bucket"
-#  key = "terraform.tfstate"
-#  region = "us-east-1"
-#  }
-# }
+terraform {
+   backend "s3" {
+   bucket = "rc-tf-remote-state-bucket"
+   key = "terraform.tfstate"
+   region = "us-east-1"
+  }
+}
 
 ###############################################################
 ### Calling a local module in the same repo (relative path) ###
@@ -25,9 +25,9 @@ module "s3_module_local_repo" {
 ### NOTE: A ssh key for the private Git repo is required on the Harness delegate for Terraform to download the module
 ### NOTE: https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account
 
-module "s3_module_private_repo" {
-  source = "git@github.com:rc-harness/private.git"
-}
+#module "s3_module_private_repo" {
+#  source = "git@github.com:rc-harness/private.git"
+#}
 
 ####################################################
 ### Calling a remote module in a public Git repo ###
@@ -35,6 +35,6 @@ module "s3_module_private_repo" {
   
 ### NOTE: No Git credentials/keys required on the Harness delegate for Terraform to download the module
   
-module "s3_module_public_repo" {
-  source = "github.com/rc-harness/public.git"
-}
+#module "s3_module_public_repo" {
+#  source = "github.com/rc-harness/public.git"
+#}
