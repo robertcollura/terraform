@@ -3,13 +3,13 @@ variable "region" {
   description = "AWS Region"
   }
 
-variable "bucket_region" {
+variable "s3_bucket_region" {
   type        = "string"
   description = "Region where S3 bucket will be created"
   default     = "us-east-1"
   }
 
-variable "bucket_name" {
+variable "s3_bucket_name" {
   type        = "string"
   description = "Name of the S3 bucket to be created"
   default     = "us-east-1"
