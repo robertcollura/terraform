@@ -15,6 +15,12 @@ variable "bucket_name" {
   default     = "us-east-1"
   }
 
+variable "tag_env" {
+  type        = "string"
+  description = "Tag for Environment Name"
+  default     = "Training"
+  }
+
 # Variable type 'list'
 
 variable "users" {
