@@ -2,13 +2,13 @@ provider "aws" {
   region = "${var.region}"
 }
 
-terraform {
-  backend "s3" {
-  bucket = "rc-tf-remote-state-bucket"
-  key = "terraform.tfstate"
-  region = "us-east-1"
-  }
-}
+# terraform {
+#  backend "s3" {
+#  bucket = "rc-tf-remote-state-bucket"
+#  key = "terraform.tfstate"
+#  region = "us-east-1"
+#  }
+# }
 
 # References main.tf configuration in S3 child module
 module "s3_module_same_repo" {
