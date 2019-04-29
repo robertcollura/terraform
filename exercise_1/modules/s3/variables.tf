@@ -19,7 +19,7 @@ variable "s3_bucket_name" {
 variable "tag_env" {
   type        = "string"
   description = "Tag for Environment Name"
-  default     = "Training"
+  default     = "training"
   }
 
 # Variable type 'list'
