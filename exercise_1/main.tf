@@ -10,21 +10,31 @@ provider "aws" {
 #  }
 # }
 
-# References main.tf configuration in S3 child module
-module "s3_module_same_repo" {
+###############################################################
+### Calling a local module in the same repo (relative path) ###
+###############################################################
+
+module "s3_module_local_repo" {
   source = "./modules/s3"
 }
   
-# References main.tf config in a remote private git repo
-# A git ssh key for the private repo is required on the Harness delegate for Terraform to perform git clone
-# https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account
+#####################################################
+### Calling a remote module in a private Git repo ###
+#####################################################
 
- # module "s3_private_repo" {
- #  source = "git@github.com:rc-harness/private.git"
- # }
+### NOTE: A ssh key for the private Git repo is required on the Harness delegate for Terraform to download the module
+### NOTE: https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account
 
-# References main.tf config in a pulic git repo
+module "s3_module_private_repo" {
+  source = "git@github.com:rc-harness/private.git"
+}
+
+####################################################
+### Calling a remote module in a public Git repo ###
+####################################################
   
- # module "s3_public_repo" {
- #  source = "github.com/rc-harness/public.git"
- # }
+### NOTE: No Git credentials/keys required on the Harness delegate for Terraform to download the module
+  
+module "s3_module_public_repo" {
+  source = "github.com/rc-harness/public.git"
+}
