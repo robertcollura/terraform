@@ -9,6 +9,6 @@ resource "aws_s3_bucket" "tf-child-module-bucket" {
   
   tags = {
     Name        = "${var.s3_bucket_name}"
-    Environment = "${var.env_tag}"
+    Environment = "${var.tag_env}"
   }
 }
