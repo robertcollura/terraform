@@ -21,24 +21,3 @@ variable "tag_env" {
   description = "Tag for Environment Name"
   default     = "training"
   }
-
-#########################
-## Variable type 'list'##
-#########################
-
-variable "users" {
-    type    = "list"
-    default = ["root", "user1", "user2"]
-    }
-
-########################
-## Variable type 'MAP'##
-########################
-
-variable "templates" {
-    type = "map"
-    default = 
-         "template1" = "01000000"
-         "template2" = "02000000"
-         "template3" = "03000000"
-   }
