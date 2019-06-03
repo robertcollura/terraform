@@ -9,7 +9,7 @@ terraform {
   }
 }
 
-resource "aws_s3_bucket" "tf-root-module-bucket" {
+resource "aws_s3_bucket" "tf-root-module-bucket1" {
   bucket = "${var.s3_bucket_name}"
   acl = "private"
   region = "${var.s3_bucket_region}"
