@@ -37,8 +37,9 @@ variable "users" {
 
 variable "templates" {
     type = "map"
-    default = 
+    default = {
          "template1" = "01000000"
          "template2" = "02000000"
          "template3" = "03000000"
+      }
    }
