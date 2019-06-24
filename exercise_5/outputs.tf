@@ -5,3 +5,7 @@ output "clusterName_1" {
 output "region" {
     value = "${var.region}"
 }
+
+output "harness" {
+    value = "bar"
+    }
