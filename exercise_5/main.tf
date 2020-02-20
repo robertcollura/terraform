@@ -24,7 +24,7 @@ resource "aws_ecs_cluster" "ecs-cluster-1" {
     min_size                    = "1"
     desired_capacity            = "2"
     vpc_zone_identifier         = ["subnet-0bacaae249a2fd391","subnet-0bacaae249a2fd391"]
-    launch_configuration        = "aws_launch_configuration.ecs-launch-configuration-1"
+    launch_configuration        = "aws_launch_configuration.ecs-launch-configuration-1.ecs-lc-harness-lab"
     health_check_type           = "ELB"
   }
   resource "aws_launch_configuration" "ecs-launch-configuration-1" {
