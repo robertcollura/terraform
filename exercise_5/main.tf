@@ -12,7 +12,7 @@ terraform {
   }
 }
 
-resource "aws_ecs_cluster" "ecs-cluster" {
+resource "aws_ecs_cluster" "ecs-cluster-1" {
     name = "${var.ecs-cluster-1}"
 
 }
