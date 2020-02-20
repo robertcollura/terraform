@@ -1,8 +1,5 @@
 provider "aws" {
-  region = var.region
-  access_key = var.access_key
-  secret_key = var.secret_key
-  version = "2.29.0"
+  region     = "${var.region}"
 }
 
 terraform {
@@ -14,21 +11,21 @@ terraform {
 }
 
 resource "aws_ecs_cluster" "ecs-cluster-1" {
-    name = harness-lab
+    name = "${var.ecs-cluster-1}"
 
 }
 
   resource "aws_autoscaling_group" "ecs-autoscaling-group-1" {
-    name                        = "ecs-asg-harness-lab"
+    name                        = "ecs-asg-${var.ecs-cluster-1}"
     max_size                    = "4"
     min_size                    = "1"
-    desired_capacity            = "2"
+    desired_capacity            = "${var.capacity}"
     vpc_zone_identifier         = ["subnet-0bacaae249a2fd391","subnet-0bacaae249a2fd391"]
-    launch_configuration        = "aws_launch_configuration.ecs-launch-configuration-1.name"
+    launch_configuration        = "${aws_launch_configuration.ecs-launch-configuration-1.name}"
     health_check_type           = "ELB"
   }
   resource "aws_launch_configuration" "ecs-launch-configuration-1" {
-    name                        = "ecs-lc-harness-lab"
+    name                        = "ecs-lb-${var.ecs-cluster-1}"
     image_id                    = "ami-0b9a214f40c38d5eb"
     instance_type               = "t2.medium"
     iam_instance_profile        = "ecsInstanceRole"
