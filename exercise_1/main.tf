@@ -9,6 +9,10 @@ resource "aws_s3_bucket" "tf-root-module-bucket" {
   acl = "private"
   region = "${var.s3_bucket_region}"
   
+  
+module "s3_module_private_repo" {
+  source = "git@github.com:rc-harness/private.git"
+  
   versioning {
     enabled = true
   }
