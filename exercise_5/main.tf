@@ -4,13 +4,6 @@ provider "aws" {
   secret_key = "${var.secret_key}"
 }
 
-terraform {
-  backend "s3" {
-  bucket = "rc-tf-remote-state-bucket"
-  key = "terraform.tfstate"
-  region = "us-east-1"
-  }
-}
 
 resource "aws_ecs_cluster" "ecs-cluster-1" {
     name = "${var.ecs-cluster-1}"
