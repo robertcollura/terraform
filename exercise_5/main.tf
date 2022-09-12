@@ -28,7 +28,9 @@ resource "aws_ecs_cluster" "ecs-cluster-1" {
   }
   resource "aws_launch_configuration" "ecs-launch-configuration-1" {
     name                        = "ecs-lb-${var.ecs-cluster-1}"
-    image_id                    = "ami-0b9a214f40c38d5eb"
+    # if the AMI below isn't available, search at AWS AMI's page using this filter 
+    # source=amazon/amzn2-ami-ecs-hvm-2.0.20220630-x86_64-ebs
+    image_id                    = "ami-09ce6553a7f2ae75d"
     instance_type               = "t2.medium"
     iam_instance_profile        = "ecsInstanceRole"
     root_block_device {
